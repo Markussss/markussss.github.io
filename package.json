@@ -1,0 +1,23 @@
+{
+  "name": "markussss.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markussss/markussss.github.io.git"
+  },
+  "author": "Markussss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markussss/markussss.github.io/issues"
+  },
+  "homepage": "https://github.com/markussss/markussss.github.io#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
