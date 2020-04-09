@@ -1,4 +1,4 @@
-function recommendskill() {
+window.recommendskill = function() {
     const sum = (a, b) => a + b;
     const max = (a, b) => Math.max(a, b);
     const get = s => o => o[s];
