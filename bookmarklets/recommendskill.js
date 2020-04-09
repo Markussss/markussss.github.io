@@ -43,4 +43,5 @@ window.recommendskill = function() {
         .sort(sort('weight'));
         alert(skillStrengths[0].skill);
     });
-}
+};
+window.recommendskill();
