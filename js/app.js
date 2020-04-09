@@ -1,4 +1,4 @@
-Array.from(document.querySelectorAll('a')).forEach(el => {
+Array.from(document.querySelectorAll('a[data-script-name]')).forEach(el => {
     let url = `https://${document.location.hostname}`;
 
     // This looks kind of ugly, but I couldn't find any other way of doing it
