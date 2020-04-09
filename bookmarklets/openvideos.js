@@ -1,4 +1,4 @@
-window.openvideos = function () {
+(() => {
     Array.from(document.querySelectorAll('video'))
     .map(v => {
         return v.src
@@ -9,5 +9,4 @@ window.openvideos = function () {
     })
     .filter(s => !!s && s != 'about:blank')
     .forEach(s => window.open(s));
-}
-window.openvideos();
+})();
