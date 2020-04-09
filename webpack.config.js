@@ -12,7 +12,7 @@ const files = fs.readdirSync(DIR)
                 path: path.resolve(__dirname, OUT),
                 filename: file,
             },
-            mode: 'production',
+            mode: process.env.NODE_ENV,
         };
     });
 
@@ -22,7 +22,7 @@ files.push({
             path: path.resolve(__dirname, OUT),
             filename: 'app.js',
         },
-        mode: 'production',
+        mode: process.env.NODE_ENV,
     });
 
 

@@ -4,7 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js && npm run templates",
+    "prod": "cross-env NODE_ENV=production webpack --config webpack.config.js && npm run templates",
+    "templates": "php templates/index.html.php > index.html"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/markussss/markussss.github.io#readme",
   "devDependencies": {
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "cross-env": "^7.0.2"
   }
 }
