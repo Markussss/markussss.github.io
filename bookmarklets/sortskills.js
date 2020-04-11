@@ -4,6 +4,10 @@ import { cache, sum, max, get, sort } from '../js/utils';
     const timeMultiplier = 1;
     const strengthMultiplier = 1;
 
+    const skillElements = Array.from(document.querySelectorAll('div[data-test=skill]'));
+    const skillParent = skillElements[0].parentNode;
+    const whereToPutSkills = skillParent.parentNode;
+
     cache('https://www.duolingo.com/vocabulary/overview')
     .then(allSkills => {
         allSkills = allSkills.vocab_overview.reduce((skills, word) => {
@@ -34,7 +38,17 @@ import { cache, sum, max, get, sort } from '../js/utils';
                 weight: (timeWeight * timeMultiplier) + (strengthWeight * strengthMultiplier),
             };
         })
-        .sort(sort('weight'));
-        alert(skillStrengths[0].skill);
+        .sort(sort('weight'))
+        .map(({skill}) => skill)
+        .map(skill => {
+            return skillElements.filter(el => {
+                let elementSkillName = el.textContent;
+                return elementSkillName.substring(1) === skill || elementSkillName === skill;
+            })[0];
+        })
+        .filter(el => !!el)
+        .forEach(el => {
+            whereToPutSkills.insertBefore(el, skillParent);
+        });
     });
 })();

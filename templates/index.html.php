@@ -27,6 +27,17 @@
                         </small>
                     </li>
                     <li>
+                        <a href='javascript:(()=>{<?= str_replace("'", '`', file_get_contents('build/sortskills.js')); ?>})()'>Sort reccommended Duolingo skills</a>
+                        -
+                        <small>created for: duolingo.com</small>
+                        -
+                        <small>
+                            <a href="https://github.com/Markussss/markussss.github.io/blob/master/bookmarklets/sortskills.js" target="_blank">
+                                source on github.com
+                            </a>
+                        </small>
+                    </li>
+                    <li>
                         <a href='javascript:(()=>{<?= str_replace("'", '`', file_get_contents('build/removeseen.js')); ?>})()'>Remove watched videos on youtube</a>
                         -
                         <small>created for: youtube.com</small>
