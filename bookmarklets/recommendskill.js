@@ -1,18 +1,10 @@
-import { cache, sum, max, get, sort } from '../js/utils';
+import { cache, sum, max, get, sort, getSkills } from '../js/utils';
 
 (() => {
     const timeMultiplier = 1;
     const strengthMultiplier = 1;
 
-    cache('https://www.duolingo.com/vocabulary/overview')
-    .then(allSkills => {
-        allSkills = allSkills.vocab_overview.reduce((skills, word) => {
-            if (!skills[word.skill]) {
-                skills[word.skill] = [];
-        }
-            skills[word.skill].push(word);
-            return skills;
-        }, {});
+    getSkills().then(allSkills => {
         var skillStrengths = Object.keys(allSkills).map(skill => {
             let skillStrength = allSkills[skill].map(word => word.strength).reduce(sum, 0) / allSkills[skill].length;
             let lastPracticeMs = allSkills[skill].map(word => word.last_practiced_ms).reduce(max, -Infinity);

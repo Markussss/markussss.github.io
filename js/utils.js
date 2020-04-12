@@ -25,10 +25,27 @@ const max = (a, b) => Math.max(a, b);
 const get = s => o => o[s];
 const sort = s => (a, b) => b[s] - a[s];
 
+const getSkills = () => {
+    const practiceLimit = Date.now() - 1000 * 60 * 60 * 24 * 100;
+    return cache('https://www.duolingo.com/vocabulary/overview')
+    .then(allSkills => {
+        return allSkills.vocab_overview
+        .filter(word => word.last_practiced_ms > practiceLimit)
+        .reduce((skills, word) => {
+            if (!skills[word.skill]) {
+                skills[word.skill] = [];
+        }
+            skills[word.skill].push(word);
+            return skills;
+        }, {});
+    });
+};
+
 export {
     cache,
     sum,
     max,
     get,
     sort,
+    getSkills,
 }
