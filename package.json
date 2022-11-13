@@ -20,7 +20,7 @@
   "homepage": "https://github.com/markussss/markussss.github.io#readme",
   "devDependencies": {
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
+    "webpack-cli": "^3.3.12",
     "cross-env": "^7.0.2"
   }
 }
